@@ -60,7 +60,7 @@ scripts/update-feeds.js         the script the Action runs
    - *Kiosk Mode* (Plus licence) is optional; the dashboard works without it.
 4. In the Fire's own Settings, set **Display, then Sleep** to the longest value. Fully's *Keep Screen On* handles the rest.
 
-The page reloads itself every 6 hours, which picks up your edits and clears memory on the old tablet. Night/dim mode starts at 22:00 and ends at 06:30.
+The page reloads itself every 6 hours, which picks up your edits and clears memory on the old tablet. Night/dim mode starts at midnight and ends at 06:30 (`nightStart` / `nightEnd` in CONFIG).
 
 ## 6. Edit settings later
 
