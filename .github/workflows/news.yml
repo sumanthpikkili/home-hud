@@ -1,0 +1,39 @@
+name: Update news and weather
+
+on:
+  schedule:
+    - cron: "7,37 * * * *"   # every 30 minutes (off the hour, when GitHub is less busy)
+  workflow_dispatch:          # lets you press "Run workflow" in the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-feeds
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Fetch headlines and weather
+        run: node scripts/update-feeds.js
+
+      - name: Commit if changed
+        run: |
+          git add news.json weather.json alerts.json
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update news and weather"
+          git push
