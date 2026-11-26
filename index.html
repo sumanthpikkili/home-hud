@@ -561,16 +561,15 @@ var CONFIG = {
     observances: false            // true = also Valentine's, Easter Sunday, Mother's/Father's Day, Halloween, Remembrance Day
   },
 
-  // ---- Garbage & recycling reminder ----
-  // CHECK these against your Peel Region schedule (peelregion.ca/waste or the Peel waste app).
+  // ---- Garbage & recycling reminder (Peel Region) ----
   binDay: {
     enabled: true,
-    weekday: "Tuesday",           // your collection day
-    weekly: ["Green bin"],        // picked up every week
+    weekday: "Thursday",          // your collection day
+    weekly: ["Organics"],         // picked up every week
     alternate: {                  // picked up every other week
-      referenceDate: "2026-12-01",// any collection day that was a "week A" day
+      referenceDate: "2026-11-26",// a Thursday that was a garbage week
       weekA: ["Garbage"],
-      weekB: ["Blue box"]
+      weekB: ["Recycling"]
       // seasonal example: weekB: ["Blue box", { name: "Yard waste", months: [4,5,6,7,8,9,10,11] }]
     },
     holidayShift: true,           // a weekday holiday on/before collection day pushes it one day later
@@ -1366,15 +1365,16 @@ var CONFIG = {
       var isToday = diff === 0 && nowMin < hmToMin(b.remindUntil || '10:00');
       if (!tomorrow && !isToday) { continue; }
       var alt = b.alternate || {}, month = new Date(actual).getUTCMonth() + 1;
-      var items = binItems(b.weekly, month);
+      var items = [];
       if (alt.referenceDate) {
         var rp = String(alt.referenceDate).split('-'), ref = Date.UTC(+rp[0], +rp[1] - 1, +rp[2]);
         if (!isNaN(ref)) {
           var refMon = ref - ((new Date(ref).getUTCDay() + 6) % 7) * DAY_MS;
           var weeks = Math.round((wkMon - refMon) / (7 * DAY_MS));
-          items = items.concat(binItems(((weeks % 2) + 2) % 2 === 0 ? alt.weekA : alt.weekB, month));
+          items = binItems(((weeks % 2) + 2) % 2 === 0 ? alt.weekA : alt.weekB, month);
         }
       }
+      items = items.concat(binItems(b.weekly, month));   // alternating item first: "Garbage + Organics"
       if (!items.length) { return null; }
       var what = items.join(' + ');
       return {

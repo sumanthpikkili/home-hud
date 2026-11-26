@@ -69,9 +69,9 @@ The page reloads itself every 6 hours, which picks up your edits and clears memo
 3. Click **Commit changes**. GitHub Pages republishes in about 1 minute.
 4. The tablet checks for a changed `index.html` every 15 minutes and reloads itself when it finds one (`autoUpdateMinutes` in CONFIG). To see a change immediately, use Fully's **Reload**. If an old version still shows, add `?v=2` (any new number) to the end of the Start URL. That forces a fresh copy.
 
-### Bin-day reminder: set this up first
+### Bin-day reminder
 
-The `binDay` block in CONFIG ships with **placeholder** values (Tuesday, green bin weekly, garbage and blue box alternating). Check your real schedule at peelregion.ca/waste or in the Peel waste app, then set:
+The `binDay` block in CONFIG is set for **Thursday** pickup: organics every week, with garbage and recycling alternating (Thursday 26 Nov 2026 was a garbage week). A weekday holiday on or before Thursday pushes pickup to Friday. If your schedule changes, adjust:
 
 | Setting | What to put |
 |---|---|
