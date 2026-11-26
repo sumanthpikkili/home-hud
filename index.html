@@ -240,9 +240,9 @@ body.no-ticks .bars i{-webkit-animation:none;animation:none;-webkit-transform:sc
 #r5 .spin{-webkit-animation-duration:70s;animation-duration:70s;-webkit-animation-direction:reverse;animation-direction:reverse;}
 .ringw.still .spin{-webkit-animation:none;animation:none;}
 .ringw.bootin{-webkit-animation:ringIn 1.5s cubic-bezier(.15,.75,.2,1) both;animation:ringIn 1.5s cubic-bezier(.15,.75,.2,1) both;}
-#secHead{-webkit-transition:-webkit-transform 1s linear;transition:transform 1s linear;}
-.sk{stroke:#00e5ff;opacity:.16;}
-.sk.on{opacity:.95;}
+#secHead{-webkit-animation:spin 60s linear infinite;animation:spin 60s linear infinite;will-change:transform;}
+.sk{stroke:#00e5ff;opacity:.28;}
+.sk.mj{opacity:.6;}
 .sk.mj{stroke-width:2.6;}
 #core{position:absolute;left:18%;top:18%;width:64%;height:64%;border-radius:50%;
   background:radial-gradient(circle,rgba(0,229,255,.13) 0%,rgba(0,229,255,.05) 42%,rgba(0,229,255,0) 70%);
@@ -255,8 +255,7 @@ body.booting #clock{opacity:0;-webkit-transform:scale(.94);transform:scale(.94);
 .clk-main{font-size:7.3em;font-weight:100;line-height:1;color:#effdff;white-space:nowrap;
   text-shadow:0 0 .06em rgba(0,229,255,.95),0 0 .22em rgba(0,229,255,.45),0 0 .6em rgba(0,229,255,.18);}
 .dg{display:inline-block;width:.58em;text-align:center;}
-.colon{display:inline-block;width:.3em;text-align:center;position:relative;top:-.06em;color:#00e5ff;
-  -webkit-transition:opacity .4s ease;transition:opacity .4s ease;}
+.colon{display:inline-block;width:.3em;text-align:center;position:relative;top:-.06em;color:#00e5ff;}
 .colon.off{opacity:.25;}
 .clk-sub{margin-top:.15em;font-size:1.55em;white-space:nowrap;}
 #ss{display:inline-block;width:1.3em;color:#00e5ff;font-weight:300;text-shadow:0 0 .4em rgba(0,229,255,.5);}
@@ -287,6 +286,7 @@ body.booting #boot{display:-webkit-flex;display:flex;}
 .tk-stale.on{display:inline-block;}
 .tk-view{position:relative;-webkit-flex:1;flex:1;height:100%;overflow:hidden;}
 .tk-track{position:absolute;left:0;top:0;height:100%;white-space:nowrap;display:inline-block;will-change:transform;
+  -webkit-backface-visibility:hidden;backface-visibility:hidden;
   -webkit-animation:tick 60s linear infinite;animation:tick 60s linear infinite;}
 .tk-copy{display:inline-block;height:100%;white-space:nowrap;}
 .ni{display:inline-block;height:100%;line-height:4.6rem;font-size:1.32rem;color:#e6f9ff;vertical-align:top;}
@@ -652,7 +652,9 @@ var CONFIG = {
     enabled: true,
     file: "news.json",
     refreshMinutes: 10,
-    speedPxPerSec: 60,
+    speedPxPerSec: 60,            // snapped to the nearest smooth speed for the screen (80 on a Fire HD 10)
+    snapSpeed: true,
+    maxItems: 20,                 // headlines per loop (fewer = lighter on old tablets)
     hideInNightMode: false,
     nightSpeedFactor: 0.4,        // in night mode, scroll at 40% speed
     staleHours: 6,
@@ -795,7 +797,6 @@ var CONFIG = {
      ===================================================================== */
   function f1(n) { return Math.round(n * 10) / 10; }
   function svgWrap(inner) { return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-200 -200 400 400">' + inner + '</svg>'; }
-  var secTicks = [];
   function buildRings() {
     var i, a, s, c, r1, d = '';
     // R1: outer tick ring
@@ -826,10 +827,15 @@ var CONFIG = {
          '<text x="0" y="143" fill="#4fb9d4" font-size="9" text-anchor="middle" font-family="monospace">30</text>' +
          '<text x="-140" y="3" fill="#4fb9d4" font-size="9" text-anchor="middle" font-family="monospace">45</text>';
     $('r3s').innerHTML = svgWrap(d);
-    var lines = $('r3s').getElementsByTagName('line');
-    for (i = 0; i < lines.length; i++) { secTicks.push(lines[i]); }
-    $('secHead').innerHTML = svgWrap(
-      '<circle cx="0" cy="-157" r="9" fill="#00e5ff" fill-opacity=".15"/>' +
+    // seconds head + trailing "comet tail" (static drawing; the whole layer rotates on the GPU)
+    var tail = '', k, a1, a2, seg = 4 * Math.PI / 180, R3 = 155.5;
+    for (k = 1; k <= 16; k++) {
+      a1 = -k * seg; a2 = -(k - 1) * seg;
+      tail += '<path d="M' + f1(Math.sin(a1) * R3) + ',' + f1(-Math.cos(a1) * R3) + 'A' + R3 + ',' + R3 + ' 0 0 1 ' + f1(Math.sin(a2) * R3) + ',' + f1(-Math.cos(a2) * R3) +
+        '" fill="none" stroke="#00e5ff" stroke-width="10" stroke-opacity="' + (0.5 * Math.pow(1 - (k - 1) / 16, 1.6)).toFixed(3) + '"/>';
+    }
+    $('secHead').innerHTML = svgWrap(tail +
+      '<circle cx="0" cy="-157" r="10" fill="#00e5ff" fill-opacity=".18"/>' +
       '<circle cx="0" cy="-157" r="4" fill="#eafcff"/>' +
       '<path d="M0,-166 L0,-172" stroke="#00e5ff" stroke-width="2"/>');
     // R4: dotted ring + two arcs
@@ -866,29 +872,17 @@ var CONFIG = {
      CLOCK
      ===================================================================== */
   var CK = { h1: $('h1'), h2: $('h2'), m1: $('m1'), m2: $('m2'), ss: $('ss'), ap: $('ampm'), colon: $('colon'), date: $('clkDate'), head: $('secHead') };
-  var lastSec = -1, lastMin = -1, lastDay = '', secDeg = 0, secInit = false;
+  var lastMin = -1, lastDay = '';
   if (CONFIG.use24Hour) { CK.ap.style.display = 'none'; }
 
-  function setHead(deg, animate) {
-    css(CK.head, 'transition', animate ? 'transform 1s linear' : 'none');
-    if (animate) { CK.head.style.webkitTransition = '-webkit-transform 1s linear'; }
-    css(CK.head, 'transform', 'rotate(' + deg + 'deg)');
-  }
-  function renderSeconds(s) {
-    var i, delta;
-    if (s === lastSec) { return; }
-    if (!secInit || s < lastSec) {
-      for (i = 0; i < 60; i++) { secTicks[i].setAttribute('class', 'sk' + (i % 5 === 0 ? ' mj' : '') + (i <= s ? ' on' : '')); }
-    } else {
-      for (i = lastSec + 1; i <= s; i++) { secTicks[i].setAttribute('class', 'sk' + (i % 5 === 0 ? ' mj' : '') + ' on'); }
-    }
-    if (!secInit) { secDeg = s * 6; setHead(secDeg, false); secInit = true; }
-    else {
-      delta = (s - lastSec + 60) % 60;
-      secDeg += delta * 6;
-      setHead(secDeg, delta <= 3);
-    }
-    lastSec = s;
+  // The seconds sweep is a 60 s CSS rotation (runs on the GPU, no per-second redraw).
+  // syncSweep() lines it up with the real clock; re-run occasionally to cancel drift.
+  function syncSweep() {
+    var p = zParts(), off = p.s + (Date.now() % 1000) / 1000;
+    css(CK.head, 'animationName', 'none');
+    void CK.head.offsetWidth;
+    css(CK.head, 'animationDelay', (-off).toFixed(2) + 's');
+    css(CK.head, 'animationName', '');
   }
   function renderClock(p) {
     var h = p.h;
@@ -901,7 +895,6 @@ var CONFIG = {
     setText(CK.ss, pad2(p.s));
     setText(CK.ap, p.h < 12 ? 'AM' : 'PM');
     cls(CK.colon, 'off', p.s % 2 === 1);
-    renderSeconds(p.s);
   }
   function renderDate(p) {
     CK.date.innerHTML = '';
@@ -1585,14 +1578,18 @@ var CONFIG = {
   var Ticker = {
     track: $('tkTrack'), view: $('tkView'), items: null, updated: 0, sig: '', width: 0, timer: null, fails: 0,
     speed: function () {
-      var s = Math.max(20, +CONFIG.news.speedPxPerSec || 60);
+      var s = Math.max(20, +CONFIG.news.speedPxPerSec || 60), dpr = W.devicePixelRatio || 1, unit;
       if (body.classList.contains('night')) { s = s * Math.max(0.1, +CONFIG.news.nightSpeedFactor || 0.4); }
+      // move a whole number of screen pixels per frame (60 fps) so text glides instead of judders
+      unit = 60 / dpr;
+      if (CONFIG.news.snapSpeed !== false && unit >= 8) { s = Math.max(1, Math.round(s / unit)) * unit; }
       return s;
     },
     filter: function (arr) {
       var src = CONFIG.news.sources || ['CBC', 'BBC', 'TECH'], out = [], i, it;
       var allowTech = src.indexOf('TECH') >= 0;
-      for (i = 0; i < arr.length && out.length < 60; i++) {
+      var cap = Math.max(4, +CONFIG.news.maxItems || 20);
+      for (i = 0; i < arr.length && out.length < cap; i++) {
         it = arr[i];
         if (!it || typeof it.title !== 'string' || !it.title) { continue; }
         if (src.indexOf(String(it.source)) < 0) { continue; }
@@ -1744,7 +1741,10 @@ var CONFIG = {
     },
     resize: function (w, h) {
       if (!this.ctx) { return; }
-      this.w = w; this.h = h; this.cv.width = w; this.cv.height = h;
+      // draw at half resolution and let the GPU scale it up: soft dots look the same, ~4x less work
+      var sc = 0.5;
+      this.w = w; this.h = h; this.cv.width = Math.round(w * sc); this.cv.height = Math.round(h * sc);
+      this.ctx.setTransform(sc, 0, 0, sc, 0, 0);
     },
     start: function () {
       if (!this.ctx || this.running) { return; }
@@ -1932,6 +1932,8 @@ var CONFIG = {
     if (WX.data) { renderWeather(); renderSun(); }
     renderWeatherStatus();
     wxFetch();
+    syncSweep(); setInterval(guard(syncSweep), 10 * 60000);
+    D.addEventListener('visibilitychange', guard(function () { if (!D.hidden) { syncSweep(); } }));
     Ticker.init();
     Alerts.init();
     Upd.init();
