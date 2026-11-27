@@ -1,19 +1,19 @@
 {
- "updated": "2026-11-26T20:06:25.640Z",
+ "updated": "2026-11-27T02:50:02.515Z",
  "items": [
   {
    "source": "CBC",
    "cat": "TOP",
-   "title": "Iranian journalist, Oscar-nominated screenwriter Mehdi Mahmoudian arrested in Tehran",
-   "time": "2026-11-26T19:49:00.000Z",
-   "link": "https://www.cbc.ca/news/world/mehdi-mahmoudian-arrest-tehran-9.7437303"
+   "title": "Quebec vs. the Crown: Who wins? | About That",
+   "time": "2026-11-26T23:58:35.000Z",
+   "link": "https://www.cbc.ca/player/play/9.7438111"
   },
   {
    "source": "BBC",
    "cat": "TOP",
-   "title": "Huntingdon train attacker found guilty of all 14 counts of attempted murder",
-   "time": "2026-11-26T19:00:33.000Z",
-   "link": "https://www.bbc.co.uk/news/articles/ck053j37yr9lo"
+   "title": "UK papers: 'Scores' of Labour MPs oppose Rosebank and 'Shameless Huw'",
+   "time": "2026-11-27T01:23:47.000Z",
+   "link": "https://www.bbc.co.uk/news/articles/cm62p75vwn9xo"
   },
   {
    "source": "CBC",
@@ -25,23 +25,51 @@
   {
    "source": "BBC",
    "cat": "TECH",
-   "title": "Musk's plan to send a million SpaceX data satellites into space approved",
-   "time": "2026-11-26T09:27:44.000Z",
-   "link": "https://www.bbc.co.uk/news/articles/cwp836l8n1jgo"
+   "title": "Why is there a shortage of 'wizard' elevator mechanics?",
+   "time": "2026-11-27T00:02:19.000Z",
+   "link": "https://www.bbc.co.uk/news/articles/c52e8k19y94mo"
   },
   {
    "source": "CBC",
    "cat": "TOP",
-   "title": "Conservatives want PM's wife Diana Fox Carney to testify to Parliament on oceans role",
-   "time": "2026-11-26T19:46:55.000Z",
-   "link": "https://www.cbc.ca/news/politics/diana-fox-carney-oceans-9.7437560"
+   "title": "KDgate for Montreal mayor continues with website mocking Kraft Dinner comments",
+   "time": "2026-11-26T23:50:33.000Z",
+   "link": "https://www.cbc.ca/news/canada/montreal/kraft-dinner-mayor-soraya-martinez-ferrada-budget-9.7436967"
   },
   {
    "source": "BBC",
    "cat": "TOP",
-   "title": "Boxing chiefs to assess Fury mental health before fight",
-   "time": "2026-11-26T18:54:27.000Z",
-   "link": "https://www.bbc.co.uk/sport/boxing/articles/cwj3klxj10edo"
+   "title": "From £250 job to £9,000 bill: Inside the rogue trader networks scamming customers at scale",
+   "time": "2026-11-27T00:58:49.000Z",
+   "link": "https://www.bbc.co.uk/news/articles/c65yme31k7m2o"
+  },
+  {
+   "source": "CBC",
+   "cat": "TECH",
+   "title": "Margaret Atwood, bird advocates fighting Pelee Island telecom tower say battle is gaining steam",
+   "time": "2026-11-25T21:19:38.000Z",
+   "link": "https://www.cbc.ca/news/canada/windsor/atwood-bird-tower-pelee-island-9.7435820"
+  },
+  {
+   "source": "BBC",
+   "cat": "TECH",
+   "title": "Asia made a big AI bet on Nvidia. What happens now?",
+   "time": "2026-11-26T23:08:12.000Z",
+   "link": "https://www.bbc.co.uk/news/articles/cqevr4lnd1nxo"
+  },
+  {
+   "source": "CBC",
+   "cat": "TOP",
+   "title": "This birdwatching expert tracked down every single bird in Grand Theft Auto VI",
+   "time": "2026-11-26T23:27:56.000Z",
+   "link": "https://www.cbc.ca/news/entertainment/gta-6-birdwatching-9.7437865"
+  },
+  {
+   "source": "BBC",
+   "cat": "TOP",
+   "title": "I spend £200 a month on fancy meals by myself - would you dine solo?",
+   "time": "2026-11-27T00:54:45.000Z",
+   "link": "https://www.bbc.co.uk/news/articles/cw8dv11dp2yeo"
   },
   {
    "source": "CBC",
@@ -53,16 +81,23 @@
   {
    "source": "BBC",
    "cat": "TECH",
-   "title": "Huawei found guilty of stealing US trade secrets but acquitted of racketeering",
-   "time": "2026-11-25T10:52:09.000Z",
-   "link": "https://www.bbc.co.uk/news/articles/cmy49ngydqzpo"
+   "title": "Musk's plan to send a million SpaceX data satellites into space approved",
+   "time": "2026-11-26T09:27:44.000Z",
+   "link": "https://www.bbc.co.uk/news/articles/cwp836l8n1jgo"
   },
   {
    "source": "CBC",
    "cat": "TOP",
-   "title": "Oil price surge expected to flip Alberta's projected $9.4B deficit into $8.5B surplus",
-   "time": "2026-11-26T19:19:52.000Z",
-   "link": "https://www.cbc.ca/news/canada/edmonton/q2-fiscal-update-alberta-9.7437528"
+   "title": "Defence minister 'very concerned' after Poilievre claims constituent's job was threatened",
+   "time": "2026-11-26T23:07:26.000Z",
+   "link": "https://www.cbc.ca/news/politics/defence-minister-wainwright-nurse-claims-job-threatened-9.7437979"
+  },
+  {
+   "source": "BBC",
+   "cat": "TOP",
+   "title": "The young hikers finding friendship and fresh air offline",
+   "time": "2026-11-27T00:52:34.000Z",
+   "link": "https://www.bbc.co.uk/news/articles/c32l50v7x2v1o"
   },
   {
    "source": "CBC",
@@ -74,23 +109,23 @@
   {
    "source": "BBC",
    "cat": "TECH",
-   "title": "EA adds AI-generated John Motson to FC 27 video game",
-   "time": "2026-11-25T10:11:34.000Z",
-   "link": "https://www.bbc.co.uk/news/articles/c65y10j841jpo"
+   "title": "Huawei found guilty of stealing US trade secrets but acquitted of racketeering",
+   "time": "2026-11-25T10:52:09.000Z",
+   "link": "https://www.bbc.co.uk/news/articles/cmy49ngydqzpo"
   },
   {
    "source": "CBC",
    "cat": "TOP",
-   "title": "Doug Ford encourages people to 'fight back' against home invasions",
-   "time": "2026-11-26T19:14:36.000Z",
-   "link": "https://www.cbc.ca/news/canada/toronto/ford-home-invasion-9.7437456"
+   "title": "Bill C-39, Bill C-22 and Quebec's Bill 21: What you need to know",
+   "time": "2026-11-26T22:45:00.000Z",
+   "link": "https://www.cbc.ca/news/politics/bill-21-39-43-22-november-2026-9.7437899"
   },
   {
    "source": "BBC",
    "cat": "TOP",
-   "title": "Burnham joined by former PMs at Ann Widdecombe service",
-   "time": "2026-11-26T18:26:09.000Z",
-   "link": "https://www.bbc.co.uk/news/articles/cvglrn4p1np0o"
+   "title": "Major Thanksgiving storm brings flooding, flight delays across US",
+   "time": "2026-11-27T00:52:11.000Z",
+   "link": "https://www.bbc.co.uk/news/articles/ckm2mz3prq77o"
   },
   {
    "source": "CBC",
@@ -102,23 +137,23 @@
   {
    "source": "BBC",
    "cat": "TECH",
-   "title": "Zoe Kleinman: Nobody is irreplaceable - unless you're Jensen Huang",
-   "time": "2026-11-25T10:03:12.000Z",
-   "link": "https://www.bbc.co.uk/news/articles/c3rrgqj2zx5yo"
+   "title": "EA adds AI-generated John Motson to FC 27 video game",
+   "time": "2026-11-25T10:11:34.000Z",
+   "link": "https://www.bbc.co.uk/news/articles/c65y10j841jpo"
   },
   {
    "source": "CBC",
    "cat": "TOP",
-   "title": "Black and Latin American people, those with low-incomes, less likely to have a family doctor: report",
-   "time": "2026-11-26T18:47:08.000Z",
-   "link": "https://www.cbc.ca/news/health/black-latin-american-low-income-family-doctor-data-cihi-9.7437102"
+   "title": "What would happen if an AI agent interfered with a Canadian election?",
+   "time": "2026-11-26T21:47:24.000Z",
+   "link": "https://www.cbc.ca/news/politics/canadian-elections-artificial-intelligence-9.7436972"
   },
   {
    "source": "BBC",
    "cat": "TOP",
-   "title": "Mandelson kept shares as ambassador despite conflict of interest fears, documents show",
-   "time": "2026-11-26T18:22:31.000Z",
-   "link": "https://www.bbc.co.uk/news/articles/c6808dv4e817o"
+   "title": "Met Police ruined my life, says Kenyan man wrongly sentenced over attack on UK couple",
+   "time": "2026-11-27T00:48:11.000Z",
+   "link": "https://www.bbc.co.uk/news/articles/cqvg2nlr8kd8o"
   },
   {
    "source": "CBC",
@@ -130,23 +165,23 @@
   {
    "source": "BBC",
    "cat": "TECH",
-   "title": "US attorney general dodges questions about Nvidia investigation",
-   "time": "2026-11-25T03:44:07.000Z",
-   "link": "https://www.bbc.co.uk/news/articles/crpdw1qx7jgxo"
+   "title": "Zoe Kleinman: Nobody is irreplaceable - unless you're Jensen Huang",
+   "time": "2026-11-25T10:03:12.000Z",
+   "link": "https://www.bbc.co.uk/news/articles/c3rrgqj2zx5yo"
   },
   {
    "source": "CBC",
    "cat": "TOP",
-   "title": "Canada puts more money down on F-35s as fighter review drags on",
-   "time": "2026-11-26T18:44:04.000Z",
-   "link": "https://www.cbc.ca/news/politics/f35-canada-us-trade-war-fighters-9.7437398"
+   "title": "Ford says he wouldn't hesitate to shoot a home invader, encourages Ontarians to 'fight back'",
+   "time": "2026-11-26T21:46:37.000Z",
+   "link": "https://www.cbc.ca/news/canada/toronto/ford-home-invasion-ontario-9.7437456"
   },
   {
    "source": "BBC",
    "cat": "TOP",
-   "title": "Drug rape husband says wife 'would have been terrified', court hears",
-   "time": "2026-11-26T18:21:59.000Z",
-   "link": "https://www.bbc.co.uk/news/articles/ck053epz2ppmo"
+   "title": "Australia's sandpapergate probe to also include 2017-18 Ashes against England",
+   "time": "2026-11-27T00:43:03.000Z",
+   "link": "https://www.bbc.co.uk/sport/cricket/articles/cxdd1335nyj0o"
   },
   {
    "source": "CBC",
@@ -158,23 +193,16 @@
   {
    "source": "BBC",
    "cat": "TECH",
-   "title": "Why tiny cars are taking off across Europe",
-   "time": "2026-11-25T00:34:05.000Z",
-   "link": "https://www.bbc.co.uk/news/articles/cmwy9jne0g7qo"
+   "title": "US attorney general dodges questions about Nvidia investigation",
+   "time": "2026-11-25T03:44:07.000Z",
+   "link": "https://www.bbc.co.uk/news/articles/crpdw1qx7jgxo"
   },
   {
    "source": "CBC",
    "cat": "TOP",
-   "title": "After nearly 6 decades on the job, this retired CBSA officer shares stories from 'the booth'",
-   "time": "2026-11-26T17:52:24.000Z",
-   "link": "https://www.cbc.ca/news/canada/windsor/cbsa-windsor-detroit-booth-retirement-9.7436971"
-  },
-  {
-   "source": "BBC",
-   "cat": "TOP",
-   "title": "Huw Edwards gives first interviews since child abuse image conviction",
-   "time": "2026-11-26T18:15:09.000Z",
-   "link": "https://www.bbc.co.uk/news/articles/c38x05jrjnx7o"
+   "title": "12 First Nations in B.C. buy stake in Coastal GasLink pipeline",
+   "time": "2026-11-26T21:30:00.000Z",
+   "link": "https://www.cbc.ca/news/politics/coastal-gaslink-pipeline-ownership-9.7437694"
   },
   {
    "source": "CBC",
@@ -186,23 +214,23 @@
   {
    "source": "BBC",
    "cat": "TECH",
-   "title": "Tech Life",
-   "time": "2026-11-24T21:00:00.000Z",
-   "link": "https://www.bbc.co.uk/sounds/play/w3ct8jyx"
+   "title": "Why tiny cars are taking off across Europe",
+   "time": "2026-11-25T00:34:05.000Z",
+   "link": "https://www.bbc.co.uk/news/articles/cmwy9jne0g7qo"
   },
   {
    "source": "CBC",
    "cat": "TOP",
-   "title": "Ontario will soon require licence, registration, insurance for some e-bikes",
-   "time": "2026-11-26T17:41:32.000Z",
-   "link": "https://www.cbc.ca/news/canada/toronto/ontario-ebike-sarkaria-restriction-9.7436932"
+   "title": "Ex-Conservative MP sues Liberal volunteer over alleged election campaign interference",
+   "time": "2026-11-26T20:54:41.000Z",
+   "link": "https://www.cbc.ca/news/politics/2025-election-lawsuit-ryan-williams-9.7437381"
   },
   {
    "source": "BBC",
    "cat": "TOP",
-   "title": "Scotland's chief medical officer Gregor Smith resigns on mental health grounds",
-   "time": "2026-11-26T18:14:18.000Z",
-   "link": "https://www.bbc.co.uk/news/articles/cm5y108evd7qo"
+   "title": "Huw Edwards gives first interviews since child abuse image conviction",
+   "time": "2026-11-27T00:38:03.000Z",
+   "link": "https://www.bbc.co.uk/news/articles/c38x05jrjnx7o"
   },
   {
    "source": "CBC",
@@ -214,23 +242,23 @@
   {
    "source": "BBC",
    "cat": "TECH",
-   "title": "Faisal Islam: Fears over the AI boom haven't gone away",
-   "time": "2026-11-24T18:21:43.000Z",
-   "link": "https://www.bbc.co.uk/news/articles/c6894evgpel5o"
+   "title": "Tech Life",
+   "time": "2026-11-24T21:00:00.000Z",
+   "link": "https://www.bbc.co.uk/sounds/play/live:bbc_world_service"
   },
   {
    "source": "CBC",
    "cat": "TOP",
-   "title": "B.C. Lions to host Grey Cup in 2029",
-   "time": "2026-11-26T17:26:10.000Z",
-   "link": "https://www.cbc.ca/news/canada/british-columbia/bc-lions-grey-cup-2029-vancouver-9.7437170"
+   "title": "A Boston man won $1M US in the lottery. Days later, ICE arrested him",
+   "time": "2026-11-26T20:48:56.000Z",
+   "link": "https://www.cbc.ca/news/world/ice-arrest-lottery-boston-9.7437360"
   },
   {
    "source": "BBC",
    "cat": "TOP",
-   "title": "When will Poundland shops close? Five key questions answered",
-   "time": "2026-11-26T17:21:21.000Z",
-   "link": "https://www.bbc.co.uk/news/articles/c6z9d3pv93glo"
+   "title": "NHS boss warns of 'horrible spike' in flu as hospital admissions surge",
+   "time": "2026-11-27T00:20:10.000Z",
+   "link": "https://www.bbc.co.uk/news/articles/cwvg2ndxdjr2o"
   },
   {
    "source": "CBC",
@@ -242,37 +270,9 @@
   {
    "source": "BBC",
    "cat": "TECH",
-   "title": "Helpful but awkward: My week with Meta's Muse ahead of its UK launch",
-   "time": "2026-11-24T09:33:00.000Z",
-   "link": "https://www.bbc.co.uk/news/articles/c9gkld2l38y6o"
-  },
-  {
-   "source": "CBC",
-   "cat": "TOP",
-   "title": "KDgate for Montreal mayor continues with website mocking Kraft Dinner comments",
-   "time": "2026-11-26T16:12:14.000Z",
-   "link": "https://www.cbc.ca/news/canada/montreal/kraft-dinner-mayor-soraya-martinez-ferrada-budget-9.7436967"
-  },
-  {
-   "source": "BBC",
-   "cat": "TOP",
-   "title": "GB win decider to reach Davis Cup semis for first time since 2019",
-   "time": "2026-11-26T17:20:42.000Z",
-   "link": "https://www.bbc.co.uk/sport/tennis/articles/c5m2lvevrk1mo"
-  },
-  {
-   "source": "CBC",
-   "cat": "TECH",
-   "title": "Scientists deploy device to tackle toxic algae bloom at popular Squamish lake",
-   "time": "2026-11-23T13:00:00.000Z",
-   "link": "https://www.cbc.ca/news/canada/british-columbia/alice-lake-blue-green-algae-bloom-9.7429138"
-  },
-  {
-   "source": "BBC",
-   "cat": "TECH",
-   "title": "US to blacklist Asian AI firm Megaspeed after Nvidia scandal",
-   "time": "2026-11-23T23:16:08.000Z",
-   "link": "https://www.bbc.co.uk/news/articles/cv98xpg5dg5zo"
+   "title": "Faisal Islam: Fears over the AI boom haven't gone away",
+   "time": "2026-11-24T18:21:43.000Z",
+   "link": "https://www.bbc.co.uk/news/articles/c6894evgpel5o"
   }
  ]
 }
